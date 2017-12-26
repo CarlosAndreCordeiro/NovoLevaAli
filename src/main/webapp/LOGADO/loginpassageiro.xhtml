@@ -14,23 +14,24 @@
         </h:head>
 
         <h:body>
-           <ui:include src="indexlogar.xhtml"/>
-            
-            
-            <p:dialog visible="true">
-            <h:form id="formLogar">
-              <p:outputLabel value="CPF* : " />
-              <p:inputMask id="txtCpf" binding="#{login}" mask="999.999.999-99" required="true"
-                           maxlength="12" requiredMessage="O CPF precisa ser preenchido!" />
-                <br/>
-                <p:outputLabel value="Senha*: " />
-		<p:password id="txtSenha" binding="#{senha}" required="true"
-					maxlength="20" requiredMessage="A senha precisa ser preenchido!" />
-                                <br/>
-                                <p:commandButton value="logar" action="#{loginControllerPassageiro.realizarLogin(login.value, senha.value)}" />
-             </h:form>
+            <ui:include src="indexlogar.xhtml"/>
+
+            <p:dialog visible="true" header="Login Passageiro" resizable="false">
+                <h:form id="formLogar">
+
+                    <p:outputLabel value="Login*: " />
+                    <p:inputText id="txtLogin" binding="#{login}" required="true"
+                                 maxlength="12" requiredMessage="O Login precisa ser preenchido!" />
+                    <br/>
+                    <p:outputLabel value="Senha*: " />
+                    <p:password id="txtSenha" binding="#{senha}" required="true"
+                                maxlength="20" requiredMessage="A senha precisa ser preenchido!" />
+                    <br/>
+                    <div align="center"  >
+                        <p:commandButton value="Logar" action="#{loginControllerPassageiro.realizarLogin(login.value, senha.value)}" />
+                    </div>
+                </h:form>
             </p:dialog>
-           
         </h:body>
     </f:view>
 </html>

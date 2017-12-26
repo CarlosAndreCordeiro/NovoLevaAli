@@ -19,7 +19,7 @@ public class LoginControllerPiloto {
         List<Piloto> pass = new PilotoController().recuperarTodos();
         
         for(Piloto p : pass){
-            if(p.getCpf().equals(login)){
+            if(p.getLogin().equals(login)){
                 if(p.getSenha().equals(senha)){
                     this.pilotoLogado = p;
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("pilotoLogado", p);
@@ -27,7 +27,7 @@ public class LoginControllerPiloto {
                 }
             }
         }
-        return "";
+        return "cadastrapiloto.xhtml";
     }
     
     public String logout(){

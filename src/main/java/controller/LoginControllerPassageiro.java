@@ -19,7 +19,7 @@ public class LoginControllerPassageiro {
         List<Passageiro> pass = new PassageiroController().recuperarTodos();
         
         for(Passageiro p : pass){
-            if(p.getCpf().equals(login)){
+            if(p.getLogin().equals(login)){
                 if(p.getSenha().equals(senha)){
                     this.passageiroLogado = p;
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("passageiroLogado", p);
@@ -27,7 +27,7 @@ public class LoginControllerPassageiro {
                 }
             }
         }
-        return "";
+        return "cadastrapassageiro.xhtml";
     }
     
     public String logout(){
